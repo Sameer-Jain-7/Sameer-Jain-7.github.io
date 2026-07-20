@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Folder } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaAppStoreIos } from "react-icons/fa";
 import { projects } from "../data/portfolio";
 
 export default function Projects() {
@@ -36,19 +36,32 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-text-muted hover:text-heading transition-colors"
-                        aria-label={`${project.title} on GitHub`}
+                        className="text-text-muted hover:text-accent transition-colors"
+                        aria-label={`${project.title} GitHub`}
                       >
                         <FaGithub size={18} />
                       </a>
                     )}
+
+                    {project.appStore && (
+                        <a
+                          href={project.appStore}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-3 py-2 rounded-lg border border-border hover:border-accent hover:bg-accent/10 transition"
+                        >
+                          <FaAppStoreIos size={16} />
+                          <span>App Store</span>
+                        </a>
+                      )}
+
                     {project.link && project.link !== "#" && (
                       <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-text-muted hover:text-heading transition-colors"
-                        aria-label={`${project.title} live link`}
+                        className="text-text-muted hover:text-accent transition-colors"
+                        aria-label={`${project.title} Live Demo`}
                       >
                         <ExternalLink size={18} />
                       </a>

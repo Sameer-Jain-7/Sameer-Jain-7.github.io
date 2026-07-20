@@ -33,36 +33,57 @@ export const education = {
 };
 
 export const skills = [
-  { name: "Swift", category: "Languages" },
-  { name: "Python", category: "Languages" },
-  { name: "JavaScript", category: "Languages" },
-  { name: "UIKit", category: "Apple" },
-  { name: "SwiftUI", category: "Apple" },
-  { name: "Combine", category: "Apple" },
-  { name: "Concurrency", category: "Apple" },
-  { name: "Core Data", category: "Apple" },
+  // Programming Languages
+  { name: "Swift", category: "Programming Languages" },
+  { name: "Python", category: "Programming Languages" },
+  { name: "JavaScript", category: "Programming Languages" },
+
+  // Apple Ecosystem
+  { name: "UIKit", category: "Apple Technologies" },
+  { name: "SwiftUI", category: "Apple Technologies" },
+  { name: "Combine", category: "Apple Technologies" },
+  { name: "Swift Concurrency", category: "Apple Technologies" },
+  { name: "Core Data", category: "Apple Technologies" },
+  { name: "StoreKit", category: "Apple Technologies" },
+  { name: "UserDefaults", category: "Apple Technologies" },
+
+  // Architecture & Design
   { name: "MVVM", category: "Architecture" },
   { name: "TCA", category: "Architecture" },
   { name: "Modular Architecture", category: "Architecture" },
-  { name: "SOLID", category: "Architecture" },
+  { name: "SOLID Principles", category: "Architecture" },
   { name: "Dependency Injection", category: "Architecture" },
-  { name: "REST APIs", category: "Backend" },
-  { name: "Deep Linking", category: "Backend" },
-  { name: "Push Notifications", category: "Backend" },
-  { name: "Localization", category: "Backend" },
-  { name: "Git", category: "DevOps" },
-  { name: "GitHub", category: "DevOps" },
-  { name: "CI/CD", category: "DevOps" },
-  { name: "Azure DevOps", category: "DevOps" },
-  { name: "Appium", category: "DevOps" },
-  { name: "CocoaPods", category: "DevOps" },
-  { name: "SPM", category: "DevOps" },
-  { name: "Optimizely", category: "Tools" },
-  { name: "AppDynamics", category: "Tools" },
+  { name: "Design Patterns", category: "Architecture" },
+
+  // Mobile Development
+  { name: "REST APIs", category: "Mobile Development" },
+  { name: "Deep Linking", category: "Mobile Development" },
+  { name: "Push Notifications", category: "Mobile Development" },
+  { name: "Localization & RTL", category: "Mobile Development" },
+  { name: "Firebase", category: "Mobile Development" },
+  { name: "Authentication", category: "Mobile Development" },
+
+  // DevOps & Testing
+  { name: "CI/CD", category: "DevOps & Testing" },
+  { name: "Azure DevOps", category: "DevOps & Testing" },
+  { name: "GitHub Actions", category: "DevOps & Testing" },
+  { name: "Appium", category: "DevOps & Testing" },
+  { name: "Unit Testing", category: "DevOps & Testing" },
+
+  // Tools
   { name: "Xcode", category: "Tools" },
-  { name: "GitHub Copilot", category: "AI" },
-  { name: "AI Automation", category: "AI" },
-  { name: "Prompt Engineering", category: "AI" },
+  { name: "Git", category: "Tools" },
+  { name: "GitHub", category: "Tools" },
+  { name: "Swift Package Manager", category: "Tools" },
+  { name: "CocoaPods", category: "Tools" },
+  { name: "Optimizely", category: "Tools" },
+
+  // AI & Automation
+  { name: "GitHub Copilot", category: "AI & Automation" },
+  { name: "Cursor", category: "AI & Automation" },
+  { name: "ChatGPT", category: "AI & Automation" },
+  { name: "AI-Powered Automation", category: "AI & Automation" },
+  { name: "Prompt Engineering", category: "AI & Automation" },
 ];
 
 export const experience = [
@@ -100,6 +121,21 @@ export const experience = [
 
 export const projects = [
   {
+    title: "HSBC Global Mobile Platform",
+    company: "HSBC",
+    description:
+      "Shared iOS libraries and plugins powering multiple customer-facing journeys on HSBC's global mobile platform.",
+    problem:
+      "Multiple teams needed reusable, consistent components across banking journeys.",
+    role: "Developing and Supporting reusable libraries for HSBC Global banking application across 20+ markets",
+    tags: ["Swift", "SwiftUI", "The Composite Architecture"],
+    achievements: [
+      "Supported customer-facing HSBC banking application across 20+ global markets",
+      "Developed and maintained 15+ reusable libraries used across global platform",
+      "~30% improvement in application startup performance",
+    ],
+  },
+  {
     title: "AI Crash Analysis Dashboard",
     company: "HSBC",
     description:
@@ -128,21 +164,6 @@ export const projects = [
     ],
   },
   {
-    title: "HSBC Global Mobile Platform",
-    company: "HSBC",
-    description:
-      "Shared iOS libraries and plugins powering multiple customer-facing journeys on HSBC's global mobile platform.",
-    problem:
-      "Multiple teams needed reusable, consistent components across banking journeys.",
-    role: "Enhanced and maintained 15+ reusable libraries and an Optimizely experimentation plugin.",
-    tags: ["Swift", "UIKit", "Modular Architecture", "Optimizely"],
-    achievements: [
-      "15+ reusable libraries maintained across global platform",
-      "A/B testing plugin adopted across 5+ customer journeys",
-      "~30% improvement in application startup performance",
-    ],
-  },
-  {
     title: "SafarJala",
     company: "Travel",
     description:
@@ -155,7 +176,8 @@ export const projects = [
       "12-language multilingual support",
       "Improved booking flows and pricing modules",
     ],
-    link: "#",
+    github: null,
+    appStore: "https://apps.apple.com/app/id6743002209",
   },
   {
     title: "SafarJala Activity Owner",
@@ -170,7 +192,8 @@ export const projects = [
       "Multilingual vendor platform",
       "Dynamic pricing and calendar-based slot scheduling",
     ],
-    link: "#",
+    github: null,
+    appStore: "https://apps.apple.com/app/id6743394275",
   },
   {
     title: "Mercedes Korea Care",
@@ -199,7 +222,8 @@ export const projects = [
       "Successful TestFlight and App Store releases",
       "Improved application stability and dependency management",
     ],
-    link: "#",
+    github: null,
+    appStore: "https://apps.apple.com/us/app/caria-menopause-midlife/id1477621356",
   },
 ];
 
