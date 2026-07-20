@@ -19,7 +19,8 @@ export const profile = {
 
 export const stats = [
   { value: "5+", label: "Years Experience" },
-  { value: "15+", label: "Shared Libraries" },
+  { value: "4", label: "Industries" },
+  { value: "20+", label: "Global Markets" },
   { value: "6+", label: "Production Apps" },
   { value: "100K+", label: "Users Impacted" },
 ];
@@ -124,15 +125,19 @@ export const projects = [
     title: "HSBC Global Mobile Platform",
     company: "HSBC",
     description:
-      "Shared iOS libraries and plugins powering multiple customer-facing journeys on HSBC's global mobile platform.",
+      "Contributing to HSBC's global iOS platform by building reusable libraries and platform capabilities that power customer-facing banking journeys across 20+ global markets.",
+  
     problem:
-      "Multiple teams needed reusable, consistent components across banking journeys.",
-    role: "Developing and Supporting reusable libraries for HSBC Global banking application across 20+ markets",
+      "Multiple product teams required standardized, reusable components to deliver consistent banking experiences across global markets.",
+  
+    role:
+      "Developing and maintaining reusable iOS libraries for HSBC's Global Mobile Platform serving 20+ international markets.",
+  
     tags: ["Swift", "SwiftUI", "The Composite Architecture"],
+  
     achievements: [
-      "Supported customer-facing HSBC banking application across 20+ global markets",
-      "Developed and maintained 15+ reusable libraries used across global platform",
-      "~30% improvement in application startup performance",
+      "Developed and maintained 15+ reusable libraries and platform modules shared across multiple banking journeys.",
+      "Optimized platform performance and App Launch time."
     ],
   },
   {
@@ -164,7 +169,7 @@ export const projects = [
     ],
   },
   {
-    title: "SafarJala",
+    title: "Safarjala",
     company: "Travel",
     description:
       "Multilingual travel booking platform supporting 12 languages with improved booking flows, pricing modules, and API integrations.",
@@ -180,7 +185,7 @@ export const projects = [
     appStore: "https://apps.apple.com/app/id6743002209",
   },
   {
-    title: "SafarJala Activity Owner",
+    title: "Safarjala Vendor",
     company: "Travel",
     description:
       "Activity management platform for vendors with multilingual support, dynamic pricing, and calendar-based slot scheduling.",
