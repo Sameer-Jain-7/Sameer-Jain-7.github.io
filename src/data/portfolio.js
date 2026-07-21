@@ -232,11 +232,43 @@ export const projects = [
   },
 ];
 
+export const sampleWorks = [
+  {
+    title: "Expense Tracker",
+    description:
+      "A SwiftUI expense tracking application built using MVVM architecture with analytics, filtering, reusable components, and modern iOS best practices.",
+    github: "https://github.com/Sameer-Jain-7/ExpenseTracker_iOS",
+    technologies: ["SwiftUI", "MVVM", "Charts"],
+  },
+  {
+    title: "E-Commerce Marketplace",
+    description:
+      "A Firebase-powered e-commerce marketplace supporting product listings, auctions, order management, shopping cart, role-based access, and admin approval workflows, built with a scalable MVVM architecture.",
+    github: "https://github.com/Sameer-Jain-7/EcommerceMarketplace_iOS",
+    technologies: ["SwiftUI", "MVVM", "Firebase"],
+  },
+  {
+    title: "Scrollable Cards",
+    description:
+      "A collection of reusable animated card components showcasing custom layouts, smooth scrolling, and UIKit animations.",
+    github: "https://github.com/Sameer-Jain-7/ScrollableCards_iOS",
+    technologies: ["UIKit", "Animations", "UICollectionView"],
+  },
+  {
+    title: "Movies Database",
+    description:
+      "A movie discovery app using TMDB APIs featuring search, image caching, networking, and clean architecture.",
+    github: "https://github.com/Sameer-Jain-7/MoviesDatabaseApp_iOS",
+    technologies: ["UIKit", "REST API", "MVVM"],
+  },
+];
+
 export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  // { label: "Sample Work", href: "#sample-work" },
   { label: "Resume", href: "#resume" },
   { label: "Contact", href: "#contact" },
 ];
