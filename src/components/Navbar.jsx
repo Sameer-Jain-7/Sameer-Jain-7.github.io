@@ -1,17 +1,35 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { navLinks, profile } from "../data/portfolio";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    if (saved) return saved;
+  
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
 
   return (
     <header
@@ -43,12 +61,55 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <a
-          href="#contact"
-          className="hidden md:inline-flex items-center px-4 py-2 text-sm font-medium text-heading bg-accent/10 border border-accent/30 rounded-full hover:bg-accent/20 transition-colors"
-        >
-          Get in touch
-        </a>
+        <div className="hidden md:flex items-center gap-4">
+
+          <button
+            onClick={toggleTheme}
+            className={`relative w-16 h-9 rounded-full transition-colors duration-300 ${
+              theme === "dark"
+                ? "bg-neutral-700"
+                : "bg-accent"
+            }`}
+            aria-label="Toggle Theme"
+          >
+            <motion.div
+              layout
+              transition={{
+                type: "spring",
+                stiffness: 500,
+                damping: 30,
+              }}
+              animate={{
+                x: theme === "dark" ? 0 : 28,
+              }}
+              className="absolute top-1 left-1 w-7 h-7 rounded-full bg-white flex items-center justify-center shadow-md"
+            >
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={theme}
+                  initial={{ opacity: 0, rotate: -90, scale: 0.7 }}
+                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                  exit={{ opacity: 0, rotate: 90, scale: 0.7 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {theme === "dark" ? (
+                    <Moon size={15} className="text-slate-700" />
+                  ) : (
+                    <Sun size={15} className="text-yellow-500" />
+                  )}
+                </motion.div>
+              </AnimatePresence>
+            </motion.div>
+          </button>
+
+          <a
+            href="#contact"
+            className="inline-flex items-center px-4 py-2 text-sm font-medium text-heading bg-accent/10 border border-accent/30 rounded-full hover:bg-accent/20 transition-colors"
+          >
+            Get in touch
+          </a>
+
+        </div>
 
         <button
           type="button"
@@ -80,6 +141,30 @@ export default function Navbar() {
                   </a>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={toggleTheme}
+                  className={`relative w-16 h-9 rounded-full transition-colors duration-300 ${
+                    theme === "dark"
+                      ? "bg-neutral-700"
+                      : "bg-accent"
+                  }`}
+                >
+                  <div
+                    className={`absolute top-1 left-1 w-7 h-7 rounded-full bg-white flex items-center justify-center shadow-md transition-transform duration-300 ${
+                      theme === "dark"
+                        ? "translate-x-0"
+                        : "translate-x-7"
+                    }`}
+                  >
+                    {theme === "dark" ? (
+                      <Moon size={15} className="text-slate-700" />
+                    ) : (
+                      <Sun size={15} className="text-yellow-500" />
+                    )}
+                  </div>
+                </button>
+              </li>
               <li>
                 <a
                   href="#contact"
